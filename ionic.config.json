@@ -1,0 +1,7 @@
+{
+  "name": "loc-track-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
