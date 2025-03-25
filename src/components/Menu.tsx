@@ -7,12 +7,21 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-  IonNote,
+  IonButton,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+  homeOutline,
+  listOutline,
+  calendarOutline,
+  walletOutline,
+  logOutOutline,
+  mapOutline,
+  closeOutline,
+} from 'ionicons/icons';
 import './Menu.css';
+import { useRef } from 'react';
 
 interface AppPage {
   url: string;
@@ -23,73 +32,88 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Home',
+    url: '/home',
+    iosIcon: homeOutline,
+    mdIcon: homeOutline,
   },
   {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Tasks',
+    url: '/tasks',
+    iosIcon: listOutline,
+    mdIcon: listOutline,
   },
   {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: 'Follow up',
+    url: '/follow-up',
+    iosIcon: calendarOutline,
+    mdIcon: calendarOutline,
   },
   {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: 'Map',
+    url: '/Map',
+    iosIcon: mapOutline,
+    mdIcon: mapOutline,
   },
   {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    title: 'Expense',
+    url: '/expense',
+    iosIcon: walletOutline,
+    mdIcon: walletOutline,
   },
   {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
-  }
+    title: 'Add Leave',
+    url: '/add-leave',
+    iosIcon: calendarOutline,
+    mdIcon: calendarOutline,
+  },
+  {
+    title: 'Logout',
+    url: '/logout',
+    iosIcon: logOutOutline,
+    mdIcon: logOutOutline,
+  },
 ];
-
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
+  const menuRef = useRef<HTMLIonMenuElement>(null);
+
+  // Function to close the menu
+  const closeMenu = () => {
+    menuRef.current?.close();
+  };
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu contentId="main" type="overlay" ref={menuRef}>
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
-          {appPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
-        </IonList>
+          <IonListHeader className="menu-header">
+            <div className="header-title">Loctrack</div>
+            <IonButton fill="clear" onClick={closeMenu}>
+              <IonIcon slot="icon-only" icon={closeOutline} />
+            </IonButton>
+          </IonListHeader>
 
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon aria-hidden="true" slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
+          {appPages.map((appPage, index) => (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem
+                className={location.pathname === appPage.url ? 'selected' : ''}
+                routerLink={appPage.url}
+                routerDirection="none"
+                lines="none"
+                detail={false}
+                onClick={closeMenu}
+              >
+                <IonIcon
+                  aria-hidden="true"
+                  slot="start"
+                  ios={appPage.iosIcon}
+                  md={appPage.mdIcon}
+                />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
           ))}
         </IonList>
       </IonContent>
