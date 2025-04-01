@@ -1,0 +1,363 @@
+/* General Styles */
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .bell-icon {
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 20px;
+  }
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  
+  .filter-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Active Button Styles */
+  .filter-buttons .active {
+    color: white;
+  }
+  
+  .filter-buttons .active.all {
+    background-color: #4a90e2; /* Blue */
+  }
+  
+  .filter-buttons .active.completed {
+    background-color: #28a745; /* Green */
+  }
+  
+  .filter-buttons .active.pending {
+    background-color: #dc3545; /* Red */
+  }
+  
+  
+  .task-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 180px);
+    padding-right: 8px; /* Adjust spacing */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ccc transparent; /* Customize scrollbar */
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+.task-list::-webkit-scrollbar {
+    width: 6px; /* Thin scrollbar */
+}
+
+.task-list::-webkit-scrollbar-track {
+    background: transparent; /* Hide track */
+}
+
+.task-list::-webkit-scrollbar-thumb {
+    background: #ccc; /* Scrollbar color */
+    border-radius: 3px; /* Rounded edges */
+}
+
+.task-list::-webkit-scrollbar-thumb:hover {
+    background: #999; /* Darker on hover */
+}
+  
+  /* Task Card */
+  .task-card {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 1px solid #00000012;
+  }
+
+  .task-card.completed {
+    border-left: 8px solid #40DD7F; /* Green for Completed */
+}
+
+.task-card.pending {
+    border-left: 8px solid #8B7DF8; /* Blue for Pending */
+}
+
+.task-card.incomplete {
+    border-left: 8px solid #FF91A5; /* Red for Incomplete */
+}
+  
+  .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .status-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .status-icon {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Green Checkmark for Completed */
+.status-icon.check {
+    color: #ffffff;
+    background: #4CAF50;
+    border-radius: 36px;
+    padding: 1px 5px;
+    font-size: 12px;
+}
+
+/* Red Cross for Pending */
+.status-icon.cross {
+    color: #ffffff;
+    background: #FF404C;
+    border-radius: 36px;
+    padding: 1px 5px;
+    font-size: 12px;
+}
+
+/* Gray Circle for Incomplete */
+.status-icon.circle {
+    color: #ACBBF3;
+    font-size: 24px;
+}
+  
+  .follow-btn {
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #8A9DF0;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 1px solid #D3D3D3;
+    font-size: 9px;
+    width: 81px;
+    height: 20px;
+    font-weight: 700;
+
+  }
+  
+  /* Floating Add Follow Button */
+  .add-follow {
+    position: fixed;
+    bottom: 31px;
+    right: 20px;
+    background-color: #4263EB;
+    color: white;
+    border: none;
+    border-radius: 55px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex
+;
+    align-items: center;
+    width: 62px;
+    height: 59px;
+}
+
+.add-follow-text {
+    font-size: 10px;
+    color: #00000080;
+    text-align: center;
+    font-weight: 700;
+    text-align: end;
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    align-items: end;
+}
+
+/* Modal Styling */
+.modal {
+    background-color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 524px;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000A1;
+    border-bottom: 1px solid #F1F3F4;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Modal Content */
+.modal-content {
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    display: flex
+;
+    flex-direction: column;
+    gap: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.task-name{
+    font-size: 14px;
+    font-weight: 600;
+    color: #00000096;
+}
+.followup-details{
+    font-size: 14px;
+    font-weight: 600;
+    color: #00000096;
+}
+
+.description{
+    font-size: 14px;
+    font-weight: 600;
+    color: #00000096;
+}
+
+#task{
+    width: 100%; /* Full width */
+    padding: 12px 15px; /* Padding inside the input box */
+    font-size: 10px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+    background-color: #EFF3F4; /* Light background color */
+    color: #333; /* Text color */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+#task:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    background-color: #fff; /* White background on focus */
+}
+#description{
+    width: 100%; /* Full width */
+  height: 127px;
+    font-size: 10px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+    background-color: #EFF3F4; /* Light background color */
+    color: #333; /* Text color */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+.cancel-btn{
+    border: 1px solid #4263EB;
+    border-radius: 15px;
+    height: 45px;
+    width: 150px;
+    background-color: #FFFFFF;
+    color: #4263EB;
+    font-size: 21px;
+}
+.submit-btn{
+    border: 1px solid #4263EB;
+    border-radius: 15px;
+    height: 45px;
+    width: 150px;
+    background-color: #4263EB;
+    color: #FFFFFF;
+    font-size: 21px;
+}
+
+.form-buttons{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}

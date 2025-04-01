@@ -32,6 +32,7 @@
     "leaflet-routing-machine": "^3.2.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
     "react-leaflet": "^4.2.1",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4"

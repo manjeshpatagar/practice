@@ -1,0 +1,83 @@
+.verify-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .verify-heading {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  
+  .code-input {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+    height: 50px;
+    width: 50px;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    color: #333;
+    outline: none;
+    margin-top: 30px;
+  }
+  
+  /* Remove IonInput default styles */
+  ion-input.code-input input {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    outline: none;
+  }
+  
+  .continue-button {
+    position: absolute;
+    bottom: 20px; /* Moves it to the bottom */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .custom-continue-button {
+    background-color: #001F3F; /* Dark Blue */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    height: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .custom-continue-button:disabled {
+    background-color: #2445CD; /* Grey for disabled state */
+    cursor: not-allowed;
+  }
+  
+  .resend-container {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .resend-text {
+    color: #9A9AAA;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .resend-link {
+    color: #4263EB; /* Dark blue */
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .resend-link.disabled {
+    color: #aaa; /* Light gray */
+    pointer-events: none;
+    cursor: not-allowed;
+  }

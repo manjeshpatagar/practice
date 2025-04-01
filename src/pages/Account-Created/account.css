@@ -1,0 +1,77 @@
+/* Center the entire container */
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full screen height */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  /* Icon container */
+  .account-icon-container {
+    width: 191px;
+    height: 193px;
+    background-color: #ACBBF3;
+    border-radius: 52%;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Checkmark icon */
+  .account-check-icon {
+    font-size: 48px;
+    color: #ffffff; /* White checkmark */
+    font-weight: bold;
+  }
+  
+  /* Title */
+  .account-title {
+    font-size: 35px;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  /* Description */
+  .account-description {
+    font-size: 15px;
+    color: #9A9AAA;
+    margin-bottom: 30px;
+  }
+  
+  /* Continue Button */
+  .account-continue-button {
+    background-color: #2c55f5; /* Dark blue */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 300px;
+    height: 60px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .account-continue-button:hover {
+    background-color: #1d3bc4;
+  }
+  
+  .account-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%; /* Ensure the container takes up full height */
+  }
+  
+  .account-continue-button {
+    align-self: center; /* Optional: centers the button horizontally */
+  }
